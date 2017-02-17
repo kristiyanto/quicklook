@@ -20,11 +20,11 @@ This work is based on [AirBnB's Superset](https://github.com/airbnb/superset)
 docker run -dp 8080:8080 kensci/quicklook 
 ```
 # Development
-[ x ] Dockerfile
-[ x ] Schema 
-[    ] Sample data
-[    ] Formulating questions that need to be answered
-[    ] Design the dashboard
+[ x ] Dockerfile  
+[ x ] Schema   
+[    ] Sample data  
+[    ] Formulating questions that need to be answered  
+[    ] Design the dashboard  
 
 Any suggestions of what questions need to be answered / what the dashboard need to have are welcome --let us know on Slack.
 
