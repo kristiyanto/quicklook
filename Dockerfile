@@ -30,16 +30,21 @@ ENV LANG=C.UTF-8 \
     PATH=$PATH:/home/superset/.bin \
     PYTHONPATH=/home/superset/superset_config.py:$PYTHONPATH
 
+ADD media/logo.png /usr/local/lib/python3.6/site-packages/superset/static/assets/images/superset.png
+ADD media/logo2.png /usr/local/lib/python3.6/site-packages/superset/static/assets/images/superset-logo@2x.png
+ADD media/logo2.png /usr/local/lib/python3.6/site-packages/superset/static/assets/images/favicon.png
+RUN chmod 644 /usr/local/lib/python3.6/site-packages/superset/static/assets/images/favicon.png
+RUN chmod 644 /usr/local/lib/python3.6/site-packages/superset/static/assets/images/superset-logo@2x.png
+
 # Run as superset user
 WORKDIR /home/superset
 COPY superset .
 RUN addgroup superset && \
     adduser -h /home/superset -G superset -D superset && \
     chown -R superset:superset /home/superset
+
 USER superset
 
-ADD media/logo.png /usr/local/lib/python3.6/site-packages/superset/static/assets/images/superset.png
-ADD media/logo2.png /usr/local/lib/python3.6/site-packages/superset/static/assets/images/superset-logo@2x.png
 
 
 # Deploy
